@@ -1,0 +1,217 @@
+{% include 'header.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div class="page-header">
+<div class="row">
+<div class="col-sm-12">
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="assets.html">IT TOOLS </a></li>
+<li class="breadcrumb-item"><i class="feather-chevron-right"></i></li>
+<li class="breadcrumb-item active"> IT Asset List </li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-12">
+	<div class="card card-table show-entire">
+		<div class="card-body">
+
+<div class="page-table-header mb-2">
+<div class="row align-items-center">
+<div class="col">
+<div class="doctor-search-blk">
+
+<div class="top-nav-search table-search-blk">
+<form>
+<input id="search" type="text" class="form-control" placeholder="Search here" >
+<a class="btn"><img src="assets/img/icons/search-normal.svg" alt=""></a>
+</form>
+</div>
+<!--
+<div class="top-nav-search mob-view">
+	<form>
+		<select id="searchInput" class=" form-control select " name="ascat">
+			<option>CPU</option>
+			<option>Keyboard</option>
+			<option>Mouse</option>
+			<option>Monitor</option>
+			<option>Headset</option>
+		</select>
+	</form>
+</div>
+-->
+
+
+<div class="add-group">
+
+<!-- <button class="btn btn-primary add-pluss ms-2" onclick="searchData()">Search</button> -->
+
+<button class="btn btn-primary add-pluss ms-2" onclick="showAllData()">Show All</button>
+<button class="float0 btn" > </button>
+
+<button class="float btn" onclick="topFunction()"> <i class="fa fa-angle-double-up my-float"> </i></button>
+<button class="float1 btn" onclick="scrollToBottom()"> <i class="fa fa-angle-double-down my-float1"> </i></button>
+
+<a href="{% url 'add_asset'%}" class="btn btn-primary add-pluss ms-2">  <img src="{% static 'assets/img/icons/plus.svg' %}" alt=""></a>
+<a href="{% url 'editasset'%}" class="btn btn-primary add-pluss ms-2">  <img src="{% static 'assets/img/icons/edit.svg' %}" alt=""></a>
+
+
+</div>
+
+</div>
+</div>
+<div class="col-auto text-end float-end ms-auto download-grp">
+<!--	<a href="#" class=" me-2"><img src="{% static 'assets/img/icons/pdf-icon-01.svg' %}" alt=""></a>
+	<a href="javascript:;" class=" me-2"><img src="{% static 'assets/img/icons/pdf-icon-02.svg' %}" alt=""></a>
+	<a href="javascript:;" class=" me-2"><img src="{% static 'assets/img/icons/pdf-icon-03.svg' %}" alt=""></a> -->
+	<a href="javascript:;"><img src="{% static 'assets/img/icons/pdf-icon-04.svg' %}" alt=""></a>
+</div>
+</div>
+</div>
+
+<div class="table-responsive  ">
+<table class="table border-0 custom-table comman-table  mb-0 "> <!-- "datatable"  this class for enable page view-->
+<thead>
+<tr >
+
+<div class="form-check check-tables "></div>
+<th>	S No    </th>
+<th>	Asset Name     </th>
+<th>	Asset ID       </th>
+<th>	Asset Cat      </th>
+<th>	Purchasedate  </th>
+<th>	Purchasefrom  </th>
+<th>	Manufacturer  </th>
+<th>	Model         </th>
+<th>	Serialno      </th>
+<th>	Supplier      </th>
+<th>	Condition     </th>
+<th>	Warranty      </th>
+<th>	Value         </th>
+<th>	Assetuser     </th>
+<th>	Givenby       </th>
+<th>	Dstatus       </th>
+<th>	Ddate         </th>
+<th>	Description   </th>
+
+</tr>
+</thead>
+
+<tbody id="data">
+<tr>
+	
+{% for i in asdata %}
+
+<td>{{ i.id      }}</td>
+<td>{{ i.assetname      }}</td>
+<td>{{ i.assetID        }}</td>
+<td>{{ i.assetcat       }}</td>
+<td>{{ i.purchasedate   }}</td>
+<td>{{ i.purchasefrom   }}</td>
+<td>{{ i.manufacturer   }}</td>
+<td>{{ i.model          }}</td>
+<td>{{ i.serialno       }}</td>
+<td>{{ i.supplier       }}</td>
+<td>{{ i.condition      }}</td>
+<td>{{ i.warranty       }}</td>
+<td>{{ i.value          }}</td>
+<td>{{ i.assetuser      }}</td>
+<td>{{ i.givenby        }}</td>
+<td>{{ i.Dstatus        }}</td>
+<td>{{ i.Ddate          }}</td>
+<td>{{ i.description    }}</td>
+
+</tr>
+{% endfor %}
+
+</tbody>
+
+   
+
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="sidebar-overlay" data-reff=""></div>
+
+<script>
+
+var dataList = Array.from(document.getElementById('data').getElementsByTagName('tr'));
+
+function showAllData() {
+  dataList.forEach(function(item) {
+    item.style.display = '';
+  });
+}
+
+function searchData() {
+  var input = document.getElementById('searchInput').value.toLowerCase();
+  var dataList = document.getElementById('data').getElementsByTagName('tr');
+
+  for (var i = 0; i < dataList.length; i++) {
+    var item = dataList[i].innerText.toLowerCase();
+    if (item.indexOf(input) > -1) {
+      dataList[i].style.display = '';
+    } else {
+      dataList[i].style.display = 'none';
+    }
+  }
+}
+showAllData();
+
+</script> 
+
+<script>
+function scrollToBottom() {
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+</script>
+
+<script>
+	$("document").ready(function(){
+		$('#search').keyup(function(){
+			var value = $(this).val().toLowerCase()
+			$("#data tr").filter(function(){
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+		});
+	});
+});
+
+
+// Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+</select>
+
+
+</html>

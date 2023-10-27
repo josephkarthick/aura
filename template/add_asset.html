@@ -1,0 +1,193 @@
+{%include 'header.html'%}
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div class="page-header">
+<div class="row">
+<div class="col-sm-12">
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="#">IT TOOLS </a></li>
+<li class="breadcrumb-item"><i class="feather-chevron-right"></i></li>
+<li class="breadcrumb-item active"> Add Asset </li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-12">
+<div class="card">
+<div class="card-body">
+
+<form action"" method="post">
+{%csrf_token%}
+
+<div class="row">
+<div class="col-12">
+<div class="form-heading">
+<h4>Add Assets</h4>
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Asset Name <span class="login-danger">*</span></label>
+<input class="form-control" type="text" name = "asname">
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Asset Id <span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="asid">
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Category <span class="login-danger">*</span></label>
+<select class="form-control select" name="ascat">
+<option>Asset Category</option>
+<option>Asset</option>
+<option>Accessories</option>
+</select>
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms cal-icon">
+<label>Purchase Date <span class="login-danger">*</span></label>
+<input class="form-control datetimepicker" type="text" placeholder="" name="pdate">
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Purchase From <span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="pfrom">
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Manufacturer <span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="manft">
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Model <span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="model">
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Serial Number <span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="sno">
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Supplier <span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="sup">
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Condition <span class="login-danger">*</span></label>
+<select class="form-control select" name="cnd">
+<option>Select Status</option>
+<option>Used </option>
+<option>Stock</option>
+
+</select>
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Warranty<span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="wrnty">
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Value<span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="value">
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Day User<span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="dayuser">
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Night User<span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="nightuser">
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Given BY<span class="login-danger">*</span></label>
+<input class="form-control" type="text" name="gby">
+</div>
+</div>
+
+<div class="col-12">
+<div class="form-heading">
+<h4>Demolished Status</h4>
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Status <span class="login-danger">*</span></label>
+<select class="form-control select" name="dsts">
+<option>Select Status</option>
+<option>Not Working </option>
+<option>Damaged</option>
+<option>Moved to Scrap</option>
+</select>
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms cal-icon">
+<label>Demolished Date <span class="login-danger">*</span></label>
+<input class="form-control datetimepicker" type="text" placeholder="" name="ddate">
+</div>
+</div>
+
+<div class="col-12 col-sm-12">
+<div class="form-group local-forms">
+<label>Description <span class="login-danger">*</span></label>
+<textarea class="form-control" rows="3" cols="30" name="des"></textarea>
+</div>
+</div>
+
+
+<div class="col-12">
+<div class="doctor-submit text-end">
+<button type="submit" class="btn btn-primary submit-form me-2">Submit</button>
+<button type="submit" class="btn btn-primary cancel-form">Cancel</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="sidebar-overlay" data-reff=""></div>
+
+</body>
+<script src="{% static 'assets/js/bootstrap-datetimepicker.min.js' %}"></script>
+</html>

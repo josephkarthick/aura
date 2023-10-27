@@ -1,0 +1,295 @@
+{%include 'header.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<body>
+<div class="page-header">
+<div class="row">
+<div class="col-sm-12">
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="assets.html">DashBoard</a></li>
+<li class="breadcrumb-item"><i class="feather-chevron-right"></i></li>
+<li class="breadcrumb-item active">IT Dashboard</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="good-morning-blk">
+<div class="row">
+<div class="col-md-6">
+<div class="morning-user">
+<h2>Good Morning,  <span>{{username}}</span></h2>
+<p>Have a nice day at work</p>
+</div>
+</div>
+<div class="col-md-6 position-blk">
+<div class="morning-img">
+<img src="assets/img/morning-img-01.png" alt="">
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+
+<div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+	<div class="dash-widget">
+		<div class="dash-boxs comman-flex-center">
+			<img src="{% static 'assets/img/icons/Cpu.svg' %}" alt="">
+		</div>
+<div class="dash-content dash-count">
+<h4>CPU</h4>
+	<h2><span class="counter-up">{{cpu}}</span></h2>
+		<p>
+			<span class="passive-view"> {{stkcpu}}</span> Stock |
+			<span class="negative-view">{{usedcpu}}</span> Used   |
+			<span class="negative-view">{{srpcpu}}</span> Scrap |
+		</p>
+</div>
+	</div>
+</div>
+
+<div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+	<div class="dash-widget">
+		<div class="dash-boxs comman-flex-center">
+			<img src="{% static 'assets/img/icons/Monitor.svg' %}" alt="">
+		</div>
+<div class="dash-content dash-count">
+<h4>Monitor</h4>
+	<h2><span class="counter-up">{{monitor}}</span></h2>
+		<p>
+			<span class="passive-view"> {{stkmonitor}}</span> Stock |
+			<span class="negative-view">{{usedmonitor}}</span> Used   |
+			<span class="negative-view">{{srpmonitor}}</span> Scrap |
+		</p>
+</div>
+	</div>
+</div>
+
+<div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+	<div class="dash-widget">
+		<div class="dash-boxs comman-flex-center">
+			<img src="{% static 'assets/img/icons/Laptop.svg' %}" alt="">
+		</div>
+<div class="dash-content dash-count">
+<h4>Laptops</h4>
+	<h2><span class="counter-up">{{Laptop}}</span></h2>
+		<p>
+			<span class="passive-view"> {{stkmonitor}}</span> Stock |
+			<span class="negative-view">{{usedmonitor}}</span> Used   |
+			<span class="negative-view">{{srpmonitor}}</span> Scrap |
+		</p>
+</div>
+	</div>
+</div>
+
+<div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+	<div class="dash-widget">
+		<div class="dash-boxs comman-flex-center">
+			<img src="{% static 'assets/img/icons/Keyboard.svg' %}" alt="">
+		</div>
+<div class="dash-content dash-count">
+<h4>Keyboard</h4>
+	<h2><span class="counter-up">{{keys}}</span></h2>
+		<p>
+			<span class="passive-view"> {{stkkeys}}</span> Stock |
+			<span class="negative-view">{{usedkeys}}</span> Used   |
+			<span class="negative-view">{{srpkeys}}</span> Scrap |
+		</p>
+</div>
+	</div>
+</div>
+
+<div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+	<div class="dash-widget">
+		<div class="dash-boxs comman-flex-center">
+			<img src="{% static 'assets/img/icons/Mouse.svg' %}" alt="">
+		</div>
+<div class="dash-content dash-count">
+<h4>Mouse</h4>
+	<h2><span class="counter-up">{{mouse}}</span></h2>
+		<p>
+			<span class="passive-view"> {{stkmouse}}</span> Stock | 
+			<span class="negative-view">{{usedmouse}}</span> Used  |
+			<span class="negative-view">{{srapmouse}}</span> Scrap |
+		</p>
+</div>
+	</div>
+</div>
+
+<div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+	<div class="dash-widget">
+		<div class="dash-boxs comman-flex-center">
+			<img src="{% static 'assets/img/icons/Headphone.svg' %}" alt="">
+		</div>
+<div class="dash-content dash-count">
+<h4>Headphone</h4>
+	<h2><span class="counter-up">{{headset}}</span></h2>
+		<p>
+			<span class="passive-view"> {{stkheadset}}</span> Stock | 
+			<span class="negative-view">{{usedheadset}}</span> Used  |
+			<span class="negative-view">{{srpheadset}}</span> Scrab |
+		</p>
+</div>
+	</div>
+</div>
+
+
+<div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+	<div class="dash-widget">
+		<div class="dash-boxs comman-flex-center">
+			<img src="{% static 'assets/img/icons/Voip.svg' %}" alt="">
+		</div>
+<div class="dash-content dash-count">
+<h4>SIP Account</h4>
+	<h2><span class="counter-up">{{sip}}</span></h2>
+		<p>
+			<span class="passive-view"> {{freevoip}}</span> Stock | 
+			<span class="negative-view">{{usdvoip}}</span> Used  |
+			<span class="negative-view">{{needsip}}</span> Need |
+		</p>
+</div>
+	</div>
+</div>
+
+<div class="col-12 col-md-12 col-lg-6 col-xl-3 d-flex">
+	<div class="card">
+		<div class="card-body">
+			<div class="chart-title">
+				<h4>VOIP Details</h4>
+			</div>
+			<div id="donut-chart-dash" class="chart-user-icon">
+				<img src="{% static 'assets/img/icons/Sip.svg' %}" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<div class="sidebar-overlay" data-reff=""></div>
+
+
+<script>
+
+// Sip or voip Chart
+
+if ($('#donut-chart-dash').length > 0) {
+var donutChart = {
+    chart: {
+        height: 290,
+        type: 'donut',
+        toolbar: {
+          show: false,
+        }
+    },
+	 plotOptions: {
+        bar: {
+            horizontal: false,
+            columnWidth: '50%'
+        },
+    },
+	dataLabels: {
+        enabled: false
+    },
+    series: [{{pulse}},{{siplink}}, {{skyfall}}, {{unified}}],
+	labels: [
+        'Pulse',
+        'Siplink',
+        'Skyfall',
+        'Unified',
+    ],
+    responsive: [{
+        breakpoint: 480,
+        options: {
+            chart: {
+                width: 200
+            },
+            legend: {
+                position: 'bottom'
+            }
+        }
+    }],
+	legend: {
+        position: 'bottom',
+    }
+}
+
+var donut = new ApexCharts(
+    document.querySelector("#donut-chart-dash"),
+    donutChart
+);
+
+donut.render();
+}
+</script>
+
+
+
+<script>
+
+// Ticket Chart
+
+if ($('#patient-chart').length > 0) {
+	var sColStacked = {
+		chart: {
+			height: 230,
+			type: 'bar',
+			stacked: true,
+			toolbar: {
+			  show: false,
+			}
+		},
+		// colors: ['#4361ee', '#888ea8', '#e3e4eb', '#d3d3d3'],
+		responsive: [{
+			breakpoint: 480,
+			options: {
+				legend: {
+					position: 'bottom',
+					offsetX: -10,
+					offsetY: 0
+				}
+			}
+		}],
+		plotOptions: {
+			bar: {
+				horizontal: false,
+				columnWidth: '15%'
+			},
+		},
+		dataLabels: {
+			enabled: false
+		},
+		series: [{
+			name: 'Male',
+			color: '#2E37A4',
+			data: [20, 30, 41, 67, 22, 43, 40,10,30,20,40]
+		},{
+			name: 'Female',
+			color: '#00D3C7',
+			data: [13, 23, 20, 8, 13, 27, 30,25,10,15,20]
+		}],
+		xaxis: {
+			categories: ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+		},
+		
+	}
+
+	var chart = new ApexCharts(
+		document.querySelector("#patient-chart"),
+		sColStacked
+	);
+
+	chart.render();
+}
+
+</script>
+
+</body>
+
+
+
+</html>

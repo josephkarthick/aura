@@ -1,0 +1,118 @@
+{% include 'header.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div class="page-header">
+<div class="row">
+<div class="col-sm-12">
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="#">IT TOOLS </a></li>
+<li class="breadcrumb-item"><i class="feather-chevron-right"></i></li>
+<li class="breadcrumb-item active"> Add Asset </li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-12">
+<div class="card">
+<div class="card-body">
+<form method="POST" action="{%url 'addvoip'%}">
+
+{% csrf_token %}
+<div class="row">
+<div class="col-12">
+<div class="form-heading">
+<h4>VOIP Add</h4>
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-4">
+<div class="form-group local-forms">
+<label>Vendor <span class="login-danger">*</span></label>
+<select class="form-control select" name="vendor">
+<option>Select Vendor</option>
+<option>Siplink</option>
+<option>Skyfall</option>
+<option>Pulse</option>
+<option>Unified</option>
+</select>
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-4">
+<div class="form-group local-forms">
+<label>Call Back Number <span class="login-danger">*</span></label>
+<input class="form-control" type="text" placeholder="" name="cbn">
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-4">
+<div class="form-group local-forms">
+<label>User Number <span class="login-danger">*</span></label>
+<input class="form-control" type="text" placeholder="" name="usrno">
+</div>
+</div>
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Domain <span class="login-danger">*</span></label>
+<input class="form-control" type="text" placeholder="" name="domain">
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Password <span class="login-danger">*</span></label>
+<input class="form-control" type="text" placeholder="" name="psw">
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>User Name <span class="login-danger">*</span></label>
+<input class="form-control" type="text" placeholder="" name="user">
+</div>
+</div>
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms cal-icon">
+<label>Date Of Purchase <span class="login-danger">*</span></label>
+<input class="form-control datetimepicker" type="text" placeholder="" name="date">
+</div>
+</div>
+
+<div class="col-12 col-sm-12">
+<div class="form-group local-forms">
+<label>Remarks <span class="login-danger">*</span></label>
+<textarea class="form-control" rows="3" cols="30" name="remarks"></textarea>
+</div>
+</div>
+
+
+<div class="col-12 col-md-6 col-xl-6">
+<div class="form-group local-forms">
+<label>Status <span class="login-danger">*</span></label>
+<select class="form-control select" name="status">
+<option>Select Status</option>
+<option>Used </option>
+<option>Not Used</option>
+<option>Deactive</option>
+</select>
+</div>
+</div>
+
+<div class="col-12">
+<div class="doctor-submit text-end">
+<button type="submit" class="btn btn-primary submit-form me-2">Submit</button>
+<button type="submit" class="btn btn-primary cancel-form">Cancel</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+</html>
